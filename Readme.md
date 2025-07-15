@@ -9,7 +9,7 @@ A LangGraph-based pipeline that fetches news headlines, analyzes emerging trends
 - **Analyzer Agent**  
   Parses those headlines and spots any keywords appearing in at least two headlines.  
 - **Reporter Agent**  
-  Composes a JSON alert indicating whether a trend was found, listing the keywords, and writing a human‑readable summary.
+  Composes a JSON alert indicating whether a trend was found, listing the keywords, and writing a human‑readable summary. It prints a string at the end will all of the information.
 
 ## Architecture
 
