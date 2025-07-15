@@ -13,3 +13,8 @@ A LangGraph-based pipeline that fetches news headlines, analyzes emerging trends
 
 ## Architecture
 
+START
+└─► fetcher (returns string of headlines)
+└─► analyzer (returns string of trends)
+└─► reporter (returns final alert string)
+└─► END
