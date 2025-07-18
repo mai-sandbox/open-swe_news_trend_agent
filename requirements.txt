@@ -1,1 +1,2 @@
 langgraph
+typing-extensions
