@@ -81,8 +81,8 @@ def reporter_agent(state: State) -> dict:
             "alert_summary": f"No new trend detected for {topic}."
         }
     
-    # Return the complete alert object as JSON string
-    return json.dumps(alert_object)
+    # Return the complete alert object as JSON string in state update dictionary
+    return {"final_result": json.dumps(alert_object)}
 
 
 # Build the StateGraph
@@ -104,6 +104,7 @@ graph = graph_builder.compile()
 
 # Export the compiled graph as required
 compiled_graph = graph
+
 
 
 
