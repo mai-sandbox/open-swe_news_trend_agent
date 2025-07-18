@@ -7,6 +7,7 @@ class State(TypedDict):
     topic: str
     headlines_str: str  # JSON string of List[str]
     trends_str: str     # JSON string of List[str]
+    final_result: str   # JSON string of final alert object
 
 
 def fetcher_agent(state: State) -> dict:
@@ -103,5 +104,6 @@ graph = graph_builder.compile()
 
 # Export the compiled graph as required
 compiled_graph = graph
+
 
 
