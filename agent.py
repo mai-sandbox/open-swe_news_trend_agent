@@ -87,3 +87,21 @@ def reporter_agent(state: State) -> dict:
 # Build the StateGraph
 graph_builder = StateGraph(State)
 
+# Add nodes
+graph_builder.add_node("fetcher", fetcher_agent)
+graph_builder.add_node("analyzer", analyzer_agent)
+graph_builder.add_node("reporter", reporter_agent)
+
+# Add edges to create sequential flow
+graph_builder.add_edge(START, "fetcher")
+graph_builder.add_edge("fetcher", "analyzer")
+graph_builder.add_edge("analyzer", "reporter")
+graph_builder.add_edge("reporter", END)
+
+# Compile the graph
+graph = graph_builder.compile()
+
+# Export the compiled graph as required
+compiled_graph = graph
+
+
