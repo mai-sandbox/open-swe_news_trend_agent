@@ -92,7 +92,7 @@ def analyzer_agent(state: State):
         headlines = []
     
     # Count word occurrences across all headlines
-    word_count = {}
+    word_count: dict[str, int] = {}
     for headline in headlines:
         if isinstance(headline, str):
             # Split into words and clean them
@@ -177,3 +177,4 @@ graph_builder.add_edge("reporter", END)
 
 # Compile the graph and export as 'app' (REQUIRED for evaluator)
 app = graph_builder.compile()
+
