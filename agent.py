@@ -83,12 +83,12 @@ def analyzer(state: State):
     headlines_str = state.get("headlines_str", "[]")
     
     try:
-        headlines = json.loads(headlines_str)
+        headlines: list[str] = json.loads(headlines_str)
     except json.JSONDecodeError:
         headlines = []
     
     # Count word occurrences across all headlines
-    word_count = {}
+    word_count: dict[str, int] = {}
     for headline in headlines:
         # Simple word extraction (split by spaces and clean)
         words = headline.lower().replace(",", "").replace(".", "").split()
@@ -158,3 +158,4 @@ graph_builder.add_edge("reporter", END)
 
 # Compile and export the graph
 app = graph_builder.compile()
+
